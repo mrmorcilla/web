@@ -67,7 +67,7 @@
     <script>
         // Función para manejar la petición cuando el botón es presionado
         document.getElementById("btn").addEventListener("click", function() {
-            fetch('http://localhost:5000/funcion')  // Dirección de tu servidor Flask
+            fetch('http://localhost:5000/funcion')  // Dirección de tu servidor Flask local
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("respuesta").innerText = data.mensaje;
