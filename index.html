@@ -56,11 +56,26 @@
 
     <main>
         <h2>¡Hola Mundo!</h2>
-        <p>Ejemplo.</p>
+        <button id="btn">Obtener valor desde Python</button>
+        <p id="respuesta"></p>
     </main>
 
     <footer>
         <p>© 2025 Lantheon</p>
     </footer>
+
+    <script>
+        // Función para manejar la petición cuando el botón es presionado
+        document.getElementById("btn").addEventListener("click", function() {
+            fetch('http://localhost:5000/funcion')  // Dirección de tu servidor Flask
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("respuesta").innerText = data.mensaje;
+                })
+                .catch(error => {
+                    document.getElementById("respuesta").innerText = 'Error al obtener el valor';
+                });
+        });
+    </script>
 </body>
 </html>
