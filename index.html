@@ -3,79 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lantheon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-        nav {
-            text-align: center;
-            background-color: #444;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <title>Login con MockAPI</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Bienvenidos a Lantheon Services</h1>
-    </header>
-
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Acerca de</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-    </nav>
-
-    <main>
-        <h2>¡Hola Mundo!</h2>
-        <button id="btn">Obtener valor desde Python</button>
-        <p id="respuesta"></p>
-    </main>
-
-    <footer>
-        <p>© 2025 Lantheon</p>
-    </footer>
-
-    <script>
-        // Función para manejar la petición cuando el botón es presionado
-        document.getElementById("btn").addEventListener("click", function() {
-            fetch('http://localhost:5000/funcion')  // Dirección de tu servidor Flask local
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("respuesta").innerText = data.mensaje;
-                })
-                .catch(error => {
-                    document.getElementById("respuesta").innerText = 'Error al obtener el valor';
-                });
-        });
-    </script>
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="email" placeholder="Correo">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="registrar()">Registrarse</button>
+    <button onclick="login()">Iniciar Sesión</button>
 </body>
 </html>
